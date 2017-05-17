@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>星星塔</title>
+    </head>
+    <body>
+        <p>產生星星塔使用陣列</p>
+<div id="s"></div>
+ <p>產生星星塔不用陣列</p>
+<div id="u"></div>
+<input type="number" id="howMuch"/><input type="button" onclick="HM()" value="你要幾顆星星">
+<div id="t"></div>
+<script type="text/javascript">
+var text = [];
+var i;
+for (i = 0; i < 5; i++) {
+    text.push("*");
+    document.getElementById("s").innerHTML += text+"<br>";
+}
+     //會有逗點符號出現
+for (i=0;i<5;i++){
+    text.shift();
+    document.getElementById("s").innerHTML += text+"<br>";
+}
+    //使輸出由多到少
+for (i = 0; i < 5; i++) {
+    text+="*";
+    document.getElementById("u").innerHTML += text+"<br>";
+}
+    //不用push就不會出現逗點,但這樣就不用宣告陣列
+for (i = 5; i > 0; i--) {
+    var text="*****";
+    var a=text.substr(0,i);
+    document.getElementById("u").innerHTML += a+"<br>";
+}
+//使用全域變數,也就是不使用var宣告
+     text1="";
+for (i = 0; i < 5; i++) {
+   
+    text1+="*";
+    document.getElementById("s").innerHTML += text1+"<br>";
+   
+}
+   
+for (i = 5; i > 0; i--) {
+   
+    var a=text1.substr(0,i);
+    document.getElementById("s").innerHTML += a+"<br>";
+}
+function HM(){
+      text2="";
+      b=howMuch.value;
+for (i = 0; i < b; i++) {
+   
+    text2+="*";
+    document.getElementById("t").innerHTML += text2+"<br>";
+   
+}
+   
+for (i = b; i > 0; i--) {
+   
+    var a=text2.substr(0,i);
+    document.getElementById("t").innerHTML += a+"<br>";
+}
+}
+</script>
+
+    </body>
+</html>
